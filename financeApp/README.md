@@ -91,52 +91,52 @@ We are able to change our name if necessary. Just click on `CHANGE` and enter th
 
 ### Registration of new users
 
-<img src="./financeApp/readme/Registration.png" alt="imagem" width="100%">
+<img src="./readme/Registration.png" alt="imagem" width="100%">
 
 
 ### Confirmation of new user registration by e-mail
 
-<img src="./financeApp/readme/VerifyRegistration.png" alt="imagem" width="100%">
+<img src="./readme/VerifyRegistration.png" alt="imagem" width="100%">
 
 
 ### Ability to create a new password
 
-<img src="./financeApp/readme/PasswordForgotten.png" alt="imagem" width="100%">
+<img src="./readme/PasswordForgotten.png" alt="imagem" width="100%">
 
 
 ### Confirmation of password change by e-mail
 
-<img src="./financeApp/readme/ChangePassword.png" alt="imagem" width="100%">
+<img src="./readme/ChangePassword.png" alt="imagem" width="100%">
 
 
 ### Confirmation of creating a new password
 
-<img src="./financeApp/readme/ChangePasswordConfirm.png" alt="imagem" width="100%">
+<img src="./readme/ChangePasswordConfirm.png" alt="imagem" width="100%">
 
 
 ### Transaction page
 
-<img src="./financeApp/readme/Transaction.png" alt="imagem" width="100%">
+<img src="./readme/Transaction.png" alt="imagem" width="100%">
 
 
 ### Page with savings for larger expenses
 
-<img src="./financeApp/readme/Wallet.png" alt="imagem" width="100%">
+<img src="./readme/Wallet.png" alt="imagem" width="100%">
 
 
 ### A page with estimated expenses for each category
 
-<img src="./financeApp/readme/Planner.png" alt="imagem" width="100%">
+<img src="./readme/Planner.png" alt="imagem" width="100%">
 
 
 ### Fees page
 
-<img src="./financeApp/readme/Fees.png" alt="imagem" width="100%">
+<img src="./readme/Fees.png" alt="imagem" width="100%">
 
 
 ### User page
 
-<img src="./financeApp/readme/User.png" alt="imagem" width="100%">
+<img src="./readme/User.png" alt="imagem" width="100%">
 
 
 
