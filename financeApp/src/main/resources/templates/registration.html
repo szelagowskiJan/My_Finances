@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      > 
+     <head>
+<title>Finance App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide" th:href="@{/home}">Finance App</a>
+    <!-- LEFT-sided navbar links -->
+    <div class="w3-left w3-hide-small">
+
+    <a href="#contact" class="w3-bar-item w3-button" th:href="@{/login}"></i> LOGIN</a>
+      <a href="#about" class="w3-bar-item w3-button" th:href="@{/registration}"> REGISTRATION</a>
+      <a href="#about" class="w3-bar-item w3-button" th:href="@{/passwordForgotten}"> PASSWORD FORGOTTEN</a>
+   
+    </div>
+    <div class="w3-right w3-hide-small">
+      <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
+    </div>
+  </div>
+                    <br>
+                        <br>
+                            <br>
+                        <div class="container">
+                            </div>
+                        </div>
+    <div class="container" style="text-align:center">
+        <div class="row col-md-8 offset-md-2">
+            <div class="card">
+                <br><br><br><br><br><br>
+                <div th:if="${param.success}">
+                    <div class="alert alert-info">Please check your email to verify your account.</div>
+                    <!--<div class="alert alert-info">You've successfully registered, you can login!</div>-->
+                </div>
+                <div th:if="${param.emptyField}">
+                    <div class="alert alert-danger">Not all values ​​have been filled in</div>
+                </div>
+                <div th:if="${param.emailExist}">
+                    <div class="alert alert-danger">This email already exists, please enter a different one or log in with an existing account</div>
+                </div>
+                <div th:if="${param.wrongEmail}">
+                    <div class="alert alert-danger">Email format incorrect, please enter email again</div>
+                </div>
+                <div th:if="${param.passwordsNotSame}">
+                    <div class="alert alert-danger">Both passwords are not the same, please enter the password and confirm the password again</div>
+                </div>
+                <div th:if="${param.passwordsIsEmpty}">
+                    <div class="alert alert-danger">Password not provided, please enter a password of at least 8 characters</div>
+                </div>
+                <div th:if="${param.passwordsTooShort}">
+                    <div class="alert alert-danger">Password too short, please enter a password of at least 8 characters</div>
+                </div>
+                <div class="card-header">
+                    <h2 class="text-center">Registration</h2>
+                </div>
+                <div class="card-body">
+                    <form
+                        method="post"
+                        role="form"
+                        th:action="@{/registration}"
+                        class="form-horizontal"
+                        type="submit"
+                        th:object="${user}"
+                        >
+                                <div class="form-group">
+                                        <p>Please fill in the details to create an account with us.</p>
+                                        
+                                        <div>
+                                            <label for="firstName"><b>Enter name</b></label>
+                                            <input type="text" placeholder="Enter name" name="firstName"></input>
+                                        </div>
+                                            <br></br>
+                                        <div>
+                                            <label for="lastName"><b>Enter surname</b></label>
+                                            <input type="text" placeholder="Enter surname" name="lastName"></input>
+                                        </div>
+                                            <br></br>
+                                        <div>
+                                            <label for="email"><b>Enter email</b></label>
+                                            <input type="text" placeholder="Enter email" name="email"></input>
+                                        </div>
+                                            <br></br>
+                                        <div>
+                                            <label for="password"><b>Enter password</b></label>
+                                            <input type="password" placeholder="Enter password" name="password"></input>
+                                        </div>
+                                            <br>    </br>    
+                                        <div>
+                                            <label for="confirmPassword"><b>Confirm password</b></label>
+                                            <input type="password" placeholder="Confirm password" name="confirmPassword"></input>
+                                        </div>
+                                                <button type="submit" class="registrationbtn"><strong>Register</strong></button>
+                                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
