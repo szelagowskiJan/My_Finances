@@ -1,13 +1,10 @@
 package com.resources.service.impl;
 
 import com.resources.dto.MediaDto;
-import com.resources.entity.Distributors;
-import com.resources.entity.Media;
-import com.resources.repository.DistributorsRepository;
-import com.resources.repository.MediaRepository;
+import com.resources.entity.*;
+import com.resources.repository.*;
 import com.resources.service.MediaService;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

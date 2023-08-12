@@ -1,18 +1,10 @@
 package com.resources.service.config;
 
-import com.resources.dto.HistoryTradeDto;
-import com.resources.dto.UserDto;
-import com.resources.entity.Category;
-import com.resources.entity.HistoryTrade;
-import com.resources.entity.Product;
-import com.resources.entity.UserEntity;
-import com.resources.repository.HistoryTradeRepository;
-import com.resources.repository.ProductRepository;
-import com.resources.repository.UserRepository;
+import com.resources.dto.*;
+import com.resources.entity.*;
+import com.resources.repository.*;
 import com.resources.service.impl.CategoryEnum;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

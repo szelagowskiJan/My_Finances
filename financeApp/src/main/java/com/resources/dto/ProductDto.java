@@ -2,9 +2,7 @@ package com.resources.dto;
 
 import com.resources.entity.Category;
 import jakarta.validation.constraints.NotEmpty;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  *

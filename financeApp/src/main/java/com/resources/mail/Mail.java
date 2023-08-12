@@ -1,7 +1,6 @@
 package com.resources.mail;
 
-import com.resources.dto.MailDto;
-import com.resources.dto.UserDto;
+import com.resources.dto.*;
 import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.util.*;
@@ -9,8 +8,7 @@ import java.util.*;
 import jakarta.mail.MessagingException;
 import java.io.UnsupportedEncodingException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.*;
 
 /**
  *

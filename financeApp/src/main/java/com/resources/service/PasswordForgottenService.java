@@ -1,7 +1,6 @@
 package com.resources.service;
 
-import com.resources.dto.MailDto;
-import com.resources.dto.UserDto;
+import com.resources.dto.*;
 import jakarta.mail.MessagingException;
 import java.io.UnsupportedEncodingException;
 import org.springframework.stereotype.Service;

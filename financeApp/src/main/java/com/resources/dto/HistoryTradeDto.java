@@ -1,8 +1,7 @@
 package com.resources.dto;
 
 import com.resources.entity.Product;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import java.util.Date;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,11 +1,9 @@
 package com.resources.dto;
 
 import com.resources.entity.Distributors;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import java.util.Date;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**

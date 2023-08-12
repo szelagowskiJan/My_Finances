@@ -1,8 +1,7 @@
 package com.resources.dto;
 
 import com.resources.entity.Media;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  *

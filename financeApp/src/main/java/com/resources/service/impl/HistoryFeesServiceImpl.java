@@ -1,15 +1,12 @@
 package com.resources.service.impl;
 
 import com.resources.dto.HistoryFeesDto;
-import com.resources.entity.Distributors;
-import com.resources.entity.HistoryFees;
-import com.resources.repository.DistributorsRepository;
-import com.resources.repository.HistoryFeesRepository;
+import com.resources.entity.*;
+import com.resources.repository.*;
 import com.resources.service.HistoryFeesService;
 import com.resources.service.config.ConfigService;
 import static com.resources.service.impl.FeesStatusEnum.*;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

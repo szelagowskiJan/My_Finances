@@ -1,20 +1,15 @@
 package com.resources.service.impl;
 
 import com.resources.config.SpringSecurityConfig;
-import com.resources.dto.MailDto;
-import com.resources.dto.UserDto;
-import com.resources.entity.Role;
-import com.resources.entity.UserEntity;
+import com.resources.dto.*;
+import com.resources.entity.*;
 import com.resources.mail.Mail;
-import com.resources.repository.RoleRepository;
-import com.resources.repository.UserRepository;
+import com.resources.repository.*;
 import com.resources.service.UserService;
 import com.resources.service.config.ConfigService;
 import jakarta.mail.MessagingException;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;

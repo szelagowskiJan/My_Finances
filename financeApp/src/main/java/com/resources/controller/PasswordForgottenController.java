@@ -1,11 +1,9 @@
 package com.resources.controller;
 
 import com.resources.controller.config.ConfigController;
-import com.resources.dto.MailDto;
-import com.resources.dto.UserDto;
+import com.resources.dto.*;
 import com.resources.entity.UserEntity;
-import com.resources.service.PasswordForgottenService;
-import com.resources.service.UserService;
+import com.resources.service.*;
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -14,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *

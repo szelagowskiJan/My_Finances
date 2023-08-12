@@ -1,8 +1,7 @@
 package com.resources.service.impl;
 
 import com.resources.config.SpringSecurityConfig;
-import com.resources.dto.MailDto;
-import com.resources.dto.UserDto;
+import com.resources.dto.*;
 import com.resources.entity.UserEntity;
 import com.resources.mail.Mail;
 import com.resources.repository.UserRepository;

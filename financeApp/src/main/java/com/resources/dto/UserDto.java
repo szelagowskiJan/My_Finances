@@ -1,10 +1,7 @@
 package com.resources.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.RequiredArgsConstructor;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 @Getter
 @Setter

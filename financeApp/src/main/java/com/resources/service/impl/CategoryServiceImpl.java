@@ -1,13 +1,10 @@
 package com.resources.service.impl;
 
 import com.resources.dto.CategoryDto;
-import com.resources.entity.Category;
-import com.resources.entity.Product;
-import com.resources.repository.CategoryRepository;
-import com.resources.repository.ProductRepository;
+import com.resources.entity.*;
+import com.resources.repository.*;
 import com.resources.service.CategoryService;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
