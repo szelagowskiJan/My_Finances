@@ -35,85 +35,80 @@ body, html {
     
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
-    <!-- LEFT-sided navbar links -->
-    <div class="w3-left w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
-      <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
+        <!-- LEFT-sided navbar links -->
+        <div class="w3-left w3-hide-small">
+          <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
+          <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
+          <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
+          <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
+          <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
+        </div>
+        <div class="w3-right w3-hide-small">
+          <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
+          <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
+          <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
+          <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
+        </div>
     </div>
-    <div class="w3-right w3-hide-small">
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
-    </div>
-    
-
-  
-  </div>
 </div>
-<div class="w3-padding-large"> </div>
 <div class="w3-padding-large"> </div>
 
 <div class="w3-content w3-padding" style="max-width:1564px">
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-centered">Wallet</h3>
-    <div th:if="${param.emptyField}">
-        <div class="alert alert-danger">Not all values ​​have been filled in</div>
-    </div>
-    <div th:if="${param.wrongData}">
-        <div class="alert alert-danger">Incorrectly entered data, please enter the data again</div>
-    </div>
-    <div th:if="${param.notEnough}">
-        <div class="alert alert-danger">Not enough in the account to put some in the wallet</div>
-    </div>
-    <div th:if="${param.errorRemoveWallet}">
-        <div class="alert alert-danger">There was a problem deleting the wallet, please refresh and try again</div>
-    </div>
+    <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-centered">Wallet</h3>
+            <div th:if="${param.emptyField}">
+                <div class="alert alert-danger">Not all values ​​have been filled in</div>
+            </div>
+            <div th:if="${param.wrongData}">
+                <div class="alert alert-danger">Incorrectly entered data, please enter the data again</div>
+            </div>
+            <div th:if="${param.notEnough}">
+                <div class="alert alert-danger">Not enough in the account to put some in the wallet</div>
+            </div>
+            <div th:if="${param.errorRemoveWallet}">
+                <div class="alert alert-danger">There was a problem deleting the wallet, please refresh and try again</div>
+            </div>
     <div>
     <button onclick="myFunction('changeData')" class="w3-btn w3-block w3-dark-grey w3-central-align">Add wallet</button>
-<div id="changeData" class="w3-container w3-hide">
-<h3 class="w3-centered"> Please enter all wallet details</h3>
+    <div id="changeData" class="w3-container w3-hide">
+        <h3 class="w3-centered"> Please enter all wallet details</h3>
 
 
-<div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <form
-                        method="post"
-                        role="form"
-                        th:action="@{/billsWallet/add}"
-                        class="form-horizontal"
-                        type="submit"
-                        id="addWallet"
-                        >
-                                <div class="form-group" style="max-width:100%" >
- 
-                                        <div class="left">
-                                            <div class="w3-third">
-                                                <label><b>Title</b></label>
-                                                <input type="text" placeholder="Title" name="title"></input>
-                                            </div>
-                                            <div class="w3-third">
-                                                <label><b>Amount</b></label>
-                                                <input type="text" placeholder="Amount" value="0.0" name="amount"></input>
-                                            </div>
-                                            <div class="w3-third">
-                                                <label><b>Execution date</b></label>
-                                                <input type="date" name="dtTo"></input>
-                                            </div>
-                                        </div>   
-                                    <br></br>
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <form
+                            method="post"
+                            role="form"
+                            th:action="@{/billsWallet/add}"
+                            class="form-horizontal"
+                            type="submit"
+                            id="addWallet"
+                            >
+                                    <div class="form-group" style="max-width:100%" >
+                                            <div class="left">
+                                                <div class="w3-third">
+                                                    <label><b>Title</b></label>
+                                                    <input type="text" placeholder="Title" name="title"></input>
+                                                </div>
+                                                <div class="w3-third">
+                                                    <label><b>Amount</b></label>
+                                                    <input type="text" placeholder="Amount" value="0.0" name="amount"></input>
+                                                </div>
+                                                <div class="w3-third">
+                                                    <label><b>Execution date</b></label>
+                                                    <input type="date" name="dtTo"></input>
+                                                </div>
+                                            </div>   
+                                            <br></br>
                                             <button type="submit" form="addWallet" class="addWalletbtn w3-btn w3-block w3-dark-grey w3-central-align w3-right" style="max-width:25%"><strong>Add</strong></button>
-                                </div>
-                    </form>
+                                    </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-</div>
     </div>
     <script>
     function myFunction(id) {
@@ -125,13 +120,13 @@ body, html {
       }
     }
     </script>
-</div>
-    
-<div class="container">
-    <div class="row w3-central-align">
-        <h1> Cash wallet </h1>
     </div>
-    <table class="w3-table-all w3-centered">
+    
+    <div class="container">
+        <div class="row w3-central-align">
+            <h1> Cash wallet </h1>
+        </div>
+        <table class="w3-table-all w3-centered">
             <tr>
                 <th>Date add</th>
                 <th>Title</th>
@@ -150,8 +145,8 @@ body, html {
                     </form>
                 </td>
             </tr>
-    </table>
-</div>
-</div>
+        </table>
+    </div>
+    </div>
 </body>
 </html>
