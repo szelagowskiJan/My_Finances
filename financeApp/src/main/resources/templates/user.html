@@ -2,81 +2,78 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       >
-<head>
-<title>Finance App</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    <head>
+        <title>Finance App</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+            <style>
+            body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
+            body, html {
+              height: 100%;
+              line-height: 1.8;
+            }
 
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
-}
+            /* Full height image header */
+            .bgimg-1 {
+              background-position: center;
+              background-size: cover;
+              background-image: url("/w3images/mac.jpg");
+              min-height: 100%;
+            }
 
-.w3-bar .w3-button {
-  padding: 16px;
-}
-</style>
-</head>
-<body class="w3-light-grey">
+            .w3-bar .w3-button {
+              padding: 16px;
+            }
+            </style>
+    </head>
+    <body class="w3-light-grey">
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
-    <!-- LEFT-sided navbar links -->
-    <div class="w3-left w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
-      <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
+            <!-- LEFT-sided navbar links -->
+            <div class="w3-left w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
+                <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
+                <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
+                <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
+                <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
+            </div>
+            <div class="w3-right w3-hide-small">
+                <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
+                <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
+                <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
+                <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
+            </div>
+        </div>
     </div>
-    <div class="w3-right w3-hide-small">
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
-    </div>
-     
-  </div>
-</div>
-<div class="w3-content w3-padding" style="max-width:1564px">
-  <div class="w3-container w3-padding-32" id="contact" style="text-align:center">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">MY PERSONAL INFORMATION</h3>
-    
-    
-    <div th:object="${user}">
-    <p>First Name: <span th:text="*{firstName}"></span></p>
-    <p>Last Name: <span th:text="*{lastName}"></span></p>
-    <p>Email: <span th:text="*{email}"></span></p>
-    
-    <button onclick="myFunction('changeData')" class="w3-btn w3-block w3-dark-grey w3-left-align ">CHANGE</button>
-<div id="changeData" class="w3-container w3-hide">
-<br>
-<h3> Fill in only the data you want to change</h3>
-<br>
+    <div class="w3-content w3-padding" style="max-width:1564px">
+        <div class="w3-container w3-padding-32" id="contact" style="text-align:center">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">MY PERSONAL INFORMATION</h3>
+            <div th:object="${user}">
+                <p>First Name: <span th:text="*{firstName}"></span></p>
+                <p>Last Name: <span th:text="*{lastName}"></span></p>
+                <p>Email: <span th:text="*{email}"></span></p>
 
-    <form
-        method="post"
-        role="form"
-        th:action="@{/user}"
-        class="form-horizontal"
-        type="submit"
-        th:object="${user}"
-        >
+        <button onclick="myFunction('changeData')" class="w3-btn w3-block w3-dark-grey w3-left-align ">CHANGE</button>
+    <div id="changeData" class="w3-container w3-hide">
+    <br>
+    <h3> Fill in only the data you want to change</h3>
+    <br>
+
+        <form
+            method="post"
+            role="form"
+            th:action="@{/user}"
+            class="form-horizontal"
+            type="submit"
+            th:object="${user}"
+            >
             <label for="firstName">First Name </label>
             <span>
                 <input class="w3-input w3-border" id="firstName" th:value="${user.firstName}" type="text" placeholder="First Name" required name="firstName">
@@ -85,27 +82,27 @@ body, html {
             <span>
                 <input class="w3-input w3-border" id="lastName" th:value="${user.lastName}" type="text" placeholder="Last Name" required name="lastName">
             </span>
-      <div th:if="${param.emptyField}">
-        <div class="alert alert-danger">Not all values ​​have been filled in</div>
-      </div>
-      <button class="w3-button w3-dark-grey w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> CHANGE 
-      </button>
-    </form>
-</div>
+          <div th:if="${param.emptyField}">
+            <div class="alert alert-danger">Not all values ​​have been filled in</div>
+          </div>
+          <button class="w3-button w3-dark-grey w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> CHANGE 
+          </button>
+        </form>
+    </div>
 
-</div>
-<script>
-function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-  </div>
-</div>
-</body>
+    </div>
+        <script>
+        function myFunction(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else { 
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+        </script>
+        </div>
+    </div>
+    </body>
 </html>
