@@ -2,142 +2,140 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       >
-<head>
-<title>Finance App</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    <head>
+        <title>Finance App</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+            <style>
+            body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
+            body, html {
+              height: 100%;
+              line-height: 1.8;
+            }
 
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
-}
+            /* Full height image header */
+            .bgimg-1 {
+              background-position: center;
+              background-size: cover;
+              background-image: url("/w3images/mac.jpg");
+              min-height: 100%;
+            }
 
-.w3-bar .w3-button {
-  padding: 16px;
-}
-</style>
-</head>
-<body class="w3-light-grey">
+            .w3-bar .w3-button {
+              padding: 16px;
+            }
+            </style>
+    </head>
+    <body class="w3-light-grey">
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
-    <!-- LEFT-sided navbar links -->
-    <div class="w3-left w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
-      <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
-    </div>
-    <div class="w3-right w3-hide-small">
-      <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
-      <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
-      <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-    <h1> Planner </h1>
-</div>
-<div>
-    <button onclick="myFunction('changeData')" class="w3-btn w3-block w3-dark-grey w3-central-align">Add new planner</button>
-<div id="changeData" class="w3-container w3-hide">
-<h3 class="w3-centered"> Please enter all planner details</h3>
-
-
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <form
-                method="post"
-                role="form"
-                th:action="@{/planner/add}"
-                class="form-horizontal"
-                type="submit"
-                id="addPlanner"
-                >
-                <div class="form-group" style="max-width:100%" >
-
-                    <div class="left">
-                        <div class="w3-third">
-                            <label>Category</label>
-                            <select id="categoryId" name="categoryId">
-                                <option th:each="category : ${categoryList}" th:id="${category.categoryId}" th:value="${category.categoryId}" th:text="${category.categoryName}"></option>
-                                <!--</optgroup>-->
-                            </select>
-                        </div>
-                        <div class="w3-third">
-                            <label><b>Scheduled Amount</b></label>
-                            <input type="text" placeholder="Scheduled Amount" name="scheduledAmount"></input>
-                        </div>
-                        <div class="w3-third">
-                            <label ><b>Title</b></label>
-                            <input type="text" placeholder="Title" name="title"></input>
-                        </div>
-                    </div>   
-                    <br></br>
-                    <button type="submit" form="addPlanner" class="addWalletbtn w3-btn w3-block w3-dark-grey w3-central-align w3-right" style="max-width:25%"><strong>Add</strong></button>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+                <a href="#home" class="w3-bar-item w3-button w3-wide">Finance App</a>
+                <!-- LEFT-sided navbar links -->
+                <div class="w3-left w3-hide-small">
+                    <a href="#about" class="w3-bar-item w3-button" th:href="@{/summary}"><i class="fa fa-bar-chart-o"></i> SUMMARY</a>
+                    <a href="#team" class="w3-bar-item w3-button" th:href="@{/transaction}"><i class="fa fa-list"></i> TRANSACTION</a>
+                    <a href="#work" class="w3-bar-item w3-button" th:href="@{/billsWallet}"><i class="fa fa-euro"></i> BILLS & WALLET</a>
+                    <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/planner}"><i class="fa fa-calendar"></i> PLANNER</a>
+                    <a href="#contact" class="w3-bar-item w3-button" th:href="@{/fees}"><i class="fa fa-minus-square-o"></i> FEES</a>
                 </div>
-            </form>
+                <div class="w3-right w3-hide-small">
+                    <a href="#work" class="w3-bar-item w3-button" th:href="@{/info}"><i class="fa fa-info"></i> INFO</a>
+                    <a href="#pricing" class="w3-bar-item w3-button" th:href="@{/settings}"><i class="fa fa-cog"></i> SETTINGS</a>
+                    <a href="#contact" class="w3-bar-item w3-button" th:href="@{/user}"><i class="fa fa-user"></i> USER</a>
+                    <a href="#contact" class="w3-bar-item w3-button" th:href="@{/logout}"></i> LOGOUT</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1> Planner </h1>
+        </div>
+        <div>
+            <button onclick="myFunction('changeData')" class="w3-btn w3-block w3-dark-grey w3-central-align">Add new planner</button>
+        <div id="changeData" class="w3-container w3-hide">
+        <h3 class="w3-centered"> Please enter all planner details</h3>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form
+                    method="post"
+                    role="form"
+                    th:action="@{/planner/add}"
+                    class="form-horizontal"
+                    type="submit"
+                    id="addPlanner"
+                    >
+                    <div class="form-group" style="max-width:100%" >
+
+                        <div class="left">
+                            <div class="w3-third">
+                                <label>Category</label>
+                                <select id="categoryId" name="categoryId">
+                                    <option th:each="category : ${categoryList}" th:id="${category.categoryId}" th:value="${category.categoryId}" th:text="${category.categoryName}"></option>
+                                    <!--</optgroup>-->
+                                </select>
+                            </div>
+                            <div class="w3-third">
+                                <label><b>Scheduled Amount</b></label>
+                                <input type="text" placeholder="Scheduled Amount" name="scheduledAmount"></input>
+                            </div>
+                            <div class="w3-third">
+                                <label ><b>Title</b></label>
+                                <input type="text" placeholder="Title" name="title"></input>
+                            </div>
+                        </div>   
+                        <br></br>
+                        <button type="submit" form="addPlanner" class="addWalletbtn w3-btn w3-block w3-dark-grey w3-central-align w3-right" style="max-width:25%"><strong>Add</strong></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+        </div>
+        <script>
+        function myFunction(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else { 
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+        </script>
     </div>
-    <script>
-    function myFunction(id) {
-      var x = document.getElementById(id);
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else { 
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-    </script>
-</div>
 
-<div class="container">
-    <div class="row">
-        <h1> Planner </h1>
+    <div class="container">
+        <div class="row">
+            <h1> Planner </h1>
+        </div>
+        <table class="w3-table-all w3-centered">
+                <tr>
+                    <th>Category</th>
+                    <th>Scheduled amount</th>
+                    <th>Real expenses</th>
+                    <th>Difference</th>
+                    <th>Status</th>
+                    <th>Comment</th>
+                </tr>
+                <tr th:each="planner: ${budgetList}" th:switch="${planner.status}">
+                    <td style="vertical-align: middle" th:text="${planner.category.categoryName}"></td>
+                    <td style="vertical-align: middle" th:text="${planner.scheduledAmount}"></td>
+                    <td style="vertical-align: middle" th:text="${planner.realExpenses}"></td>
+                    <td style="vertical-align: middle" th:text="${planner.difference}"></td>
+                    <td th:case="'You spend less'" class="w3-text-green" style="vertical-align: middle" th:text="${planner.status}"></td>
+                    <td th:case="'Excellent'" class="w3-text-blue" style="vertical-align: middle" th:text="${planner.status}"></td>
+                    <td th:case="'You spend more'" class="w3-text-red" style="vertical-align: middle" th:text="${planner.status}"></td>
+                    <td th:case="'Status unknow'" style="vertical-align: middle" th:text="${planner.status}"></td>
+                    <td style="vertical-align: middle" th:text="${planner.title}"></td>
+
+                </tr>
+        </table>
     </div>
-    <table class="w3-table-all w3-centered">
-            <tr>
-                <th>Category</th>
-                <th>Scheduled amount</th>
-                <th>Real expenses</th>
-                <th>Difference</th>
-                <th>Status</th>
-                <th>Comment</th>
-            </tr>
-            <tr th:each="planner: ${budgetList}" th:switch="${planner.status}">
-                <td style="vertical-align: middle" th:text="${planner.category.categoryName}"></td>
-                <td style="vertical-align: middle" th:text="${planner.scheduledAmount}"></td>
-                <td style="vertical-align: middle" th:text="${planner.realExpenses}"></td>
-                <td style="vertical-align: middle" th:text="${planner.difference}"></td>
-                <td th:case="'You spend less'" class="w3-text-green" style="vertical-align: middle" th:text="${planner.status}"></td>
-                <td th:case="'Excellent'" class="w3-text-blue" style="vertical-align: middle" th:text="${planner.status}"></td>
-                <td th:case="'You spend more'" class="w3-text-red" style="vertical-align: middle" th:text="${planner.status}"></td>
-                <td th:case="'Status unknow'" style="vertical-align: middle" th:text="${planner.status}"></td>
-                <td style="vertical-align: middle" th:text="${planner.title}"></td>
-
-            </tr>
-    </table>
-</div>
-</body>
+    </body>
 </html>
