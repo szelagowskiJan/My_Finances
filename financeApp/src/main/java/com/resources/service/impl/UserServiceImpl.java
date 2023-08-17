@@ -32,8 +32,7 @@ public class UserServiceImpl extends ConfigService implements UserService {
 
     @Override
     public UserEntity saveUserEntity(UserDto userDto) {
-        UserEntity user = new UserEntity();
-        user = userDtoMappedToUserEntity(userDto);
+        UserEntity user = userDtoMappedToUserEntity(userDto);
         return userRepository.save(user);
     }
 
@@ -41,10 +40,10 @@ public class UserServiceImpl extends ConfigService implements UserService {
     public void changeUserData(UserEntity userDto) {
         UserEntity user = findUserEntityByEmail(userDto.getEmail());
 
-        if (!userDto.getFirstName().isEmpty()) {
+        if (userDto.getFirstName() != null && !userDto.getFirstName().isEmpty()) {
             user.setFirstName(userDto.getFirstName());
         }
-        if (!userDto.getLastName().isEmpty()) {
+        if (userDto.getLastName() != null && !userDto.getLastName().isEmpty()) {
             user.setLastName(userDto.getLastName());
         }
         userRepository.save(user);
