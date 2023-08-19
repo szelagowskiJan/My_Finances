@@ -9,8 +9,8 @@ public enum FeesStatusEnum {
     PAID(1, "PAID"),
     UNKNOW(2, "UNKNOW");
 
-    private final int feesStatusId;
-    private final String feesStatusName;
+    public final int feesStatusId;
+    public final String feesStatusName;
 
     FeesStatusEnum(int feesStatusId, String feesStatusName) {
         this.feesStatusId = feesStatusId;
