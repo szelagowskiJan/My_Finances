@@ -1,8 +1,7 @@
 package com.resources.service;
 
 import com.resources.service.impl.FeesStatusEnum;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.InjectMocks;
 
 /**

@@ -12,7 +12,7 @@ public class ServiceConfig {
 
     protected UserEntity getCorrectUserEntity() {
         UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(5);
+        userEntity.setUserId(3);
         userEntity.setFirstName("Adam");
         userEntity.setLastName("Nowak");
         userEntity.setEmail("nowak@wp.pl");
