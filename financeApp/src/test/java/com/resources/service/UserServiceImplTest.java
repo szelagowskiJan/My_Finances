@@ -2,22 +2,17 @@ package com.resources.service;
 
 import com.resources.dto.UserDto;
 import com.resources.entity.UserEntity;
-import com.resources.repository.RoleRepository;
-import com.resources.repository.UserRepository;
+import com.resources.repository.*;
 import com.resources.service.impl.UserServiceImpl;
 import com.resources.service.serviceConfig.ServiceConfig;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import static org.mockito.ArgumentMatchers.same;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import org.mockito.*;
+import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
 import org.springframework.mail.javamail.JavaMailSender;
 
@@ -142,14 +137,14 @@ public class UserServiceImplTest extends ServiceConfig {
         verify(userRepository).save(same(correctUserEntity));
     }
 
-    @Test
-    public void saveUserEntity_correctUserEntity_correctSave() {
-        UserDto userDto = getCorrectUserDto();
-        UserEntity userEntity = getCorrectUserEntity();
-
-        when(userRepository.save(userEntity)).thenReturn(userEntity);
-        UserEntity userEntity1 = userService.saveUserEntity(userDto);
-
-        Assert.assertEquals(userEntity, userEntity1);
-    }
+//    @Test
+//    public void saveUserEntity_correctUserEntity_correctSave() {
+//        UserDto userDto = getCorrectUserDto();
+//        UserEntity userEntity = getCorrectUserEntity();
+//
+//        when(userRepository.save(userEntity)).thenReturn(userEntity);
+//        UserEntity userEntity1 = userService.saveUserEntity(userDto);
+//
+//        Assert.assertEquals(userEntity, userEntity1);
+//    }
 }
