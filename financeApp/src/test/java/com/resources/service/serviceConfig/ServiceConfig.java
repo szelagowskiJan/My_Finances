@@ -24,7 +24,7 @@ public class ServiceConfig {
 
     protected UserEntity getUserEntityWithoutFirstNameAndLastName() {
         UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(5);
+        userEntity.setUserId(3);
         userEntity.setEmail("nowak@wp.pl");
         userEntity.setUserRole(1);
         userEntity.setEnabled(false);
@@ -33,7 +33,7 @@ public class ServiceConfig {
 
     protected UserEntity getUserEntityEmptyFirstNameAndLastName() {
         UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(5);
+        userEntity.setUserId(3);
         userEntity.setFirstName("");
         userEntity.setLastName("");
         userEntity.setEmail("nowak@wp.pl");
@@ -44,7 +44,7 @@ public class ServiceConfig {
 
     protected UserDto getCorrectUserDto() {
         UserDto userDto = new UserDto();
-        userDto.setUserId(5);
+        userDto.setUserId(3);
         userDto.setFirstName("Adam");
         userDto.setLastName("Nowak");
         userDto.setEmail("nowak@wp.pl");
