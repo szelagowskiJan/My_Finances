@@ -1,15 +1,21 @@
 package com.resources.service;
 
+import com.resources.config.SpringSecurityConfig;
+import com.resources.dto.MailDto;
 import com.resources.dto.UserDto;
 import com.resources.entity.UserEntity;
 import com.resources.repository.*;
 import com.resources.service.impl.UserServiceImpl;
 import com.resources.service.serviceConfig.ServiceConfig;
+import jakarta.mail.MessagingException;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.*;
+import org.junit.rules.ExpectedException;
 import static org.mockito.ArgumentMatchers.same;
 import org.mockito.*;
 import static org.mockito.Mockito.*;
@@ -30,6 +36,9 @@ public class UserServiceImplTest extends ServiceConfig {
 
     @Mock
     private JavaMailSender mailSender;
+
+    @Rule
+    public final ExpectedException exception = ExpectedException.none();
 
     @InjectMocks
     private UserServiceImpl userService;
@@ -137,14 +146,24 @@ public class UserServiceImplTest extends ServiceConfig {
         verify(userRepository).save(same(correctUserEntity));
     }
 
-//    @Test
-//    public void saveUserEntity_correctUserEntity_correctSave() {
-//        UserDto userDto = getCorrectUserDto();
-//        UserEntity userEntity = getCorrectUserEntity();
-//
-//        when(userRepository.save(userEntity)).thenReturn(userEntity);
-//        UserEntity userEntity1 = userService.saveUserEntity(userDto);
-//
-//        Assert.assertEquals(userEntity, userEntity1);
-//    }
+    @Test
+    public void saveUserEntity_correctUserEntity_correctSave() {
+        UserDto userDto = getCorrectUserDto();
+        UserEntity userEntity = getCorrectUserEntity();
+        when(userRepository.save(any())).thenReturn(userEntity);
+        UserEntity entity = userService.saveUserEntity(userDto);
+        Assert.assertNotNull(entity);
+    }
+    
+    @Test
+    public void register_correctRegisterValuesWithoutEmail_MessagingException() throws UnsupportedEncodingException, MessagingException {
+        UserDto userDto = getCorrectUserDto();
+        userDto.setEmail("@wp.pl");
+        MailDto mailDto = new MailDto();
+        UserEntity userEntity = getCorrectUserEntity();
+        UUID uuid = UUID.randomUUID();
+        when(userRepository.save(any())).thenReturn(userEntity);
+        exception.expect(MessagingException.class);
+        userService.register(userDto, mailDto);
+    }
 }
