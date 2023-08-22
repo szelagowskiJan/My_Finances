@@ -97,7 +97,7 @@ public class ConfigService {
         user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
-        user.setUserRole(USER_ROLE);
+        user.setUserRole(userDto.getUserRole());
         user.setVerificationCode(userDto.getVerificationCode());
         return user;
     }
