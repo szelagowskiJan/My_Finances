@@ -8,7 +8,7 @@ import lombok.*;
  */
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Builder
 public class PlannerDto {
     
     private int id;

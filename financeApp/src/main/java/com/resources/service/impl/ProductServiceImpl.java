@@ -1,6 +1,7 @@
 package com.resources.service.impl;
 
 import com.resources.dto.ProductDto;
+import com.resources.dto.dtoMapper.ProductDtoMapper;
 import com.resources.entity.Product;
 import com.resources.repository.ProductRepository;
 import com.resources.service.ProductService;
@@ -26,17 +27,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> findAllProducts() {
         List<Product> products = productRepository.findAll();
-        return products.stream()
-                .map((product) -> mapToProductDto(product))
-                .toList();
-    }
-
-    private ProductDto mapToProductDto(Product product) {
-        ProductDto productDto = new ProductDto();
-        productDto.setProductId(product.getProductId());
-        productDto.setProductName(product.getProductName());
-        productDto.setCategory(product.getCategory());
-
-        return productDto;
+        return ProductDtoMapper.mapToProductDtos(products);
     }
 }

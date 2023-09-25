@@ -10,7 +10,7 @@ import lombok.*;
  */
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Builder
 public class ProductDto {
     
     @NotEmpty

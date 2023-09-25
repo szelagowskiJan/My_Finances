@@ -1,6 +1,7 @@
 package com.resources.service.impl;
 
 import com.resources.dto.MediaDto;
+import com.resources.dto.dtoMapper.MediaDtoMapper;
 import com.resources.entity.*;
 import com.resources.repository.*;
 import com.resources.service.MediaService;
@@ -27,26 +28,6 @@ public class MediaServiceImpl implements MediaService {
     public List<MediaDto> findAllMedia() {
         List<Media> mediaList = mediaRepository.findAll();
         distributorsList = distributorsRepository.findAll();
-        List<MediaDto> mediaDtoList = mediaList.stream().map(mapper -> mapToMediaDto(mapper)).toList();
-
-        return mediaDtoList;
-    }
-
-    private MediaDto mapToMediaDto(Media media) {
-        MediaDto mediaDto = new MediaDto();
-        mediaDto.setId(media.getId());
-        mediaDto.setMediaName(media.getMediaName());
-        mediaDto.setDistributors(getDistributorListForEachMedia(media, distributorsList));
-        return mediaDto;
-    }
-
-    private List<Distributors> getDistributorListForEachMedia(Media media, List<Distributors> distributorsList) {
-        List<Distributors> listDistributorsForEachMedia = new LinkedList();
-        for (Distributors distributors : distributorsList) {
-            if (distributors.getMedia().getId() == media.getId()) {
-                listDistributorsForEachMedia.add(distributors);
-            }
-        }
-        return listDistributorsForEachMedia;
+        return MediaDtoMapper.mapToMediaDtos(mediaList, distributorsList);
     }
 }
